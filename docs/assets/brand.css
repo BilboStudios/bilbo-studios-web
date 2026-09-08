@@ -1,0 +1,88 @@
+.wordmark {
+  --mark-size: 36px;
+  --name-size: 22px;
+  --studios-size: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-transform: uppercase;
+}
+
+/* Use the same normal B for the three lockups; align its visible bounds. */
+.wordmark-mark,
+.wordmark-initial {
+  display: block;
+  flex: 0 0 auto;
+  background: var(--accent, #ff5c6c);
+  -webkit-mask-image: url("bilbo-pixel-b.png");
+  mask-image: url("bilbo-pixel-b.png");
+  -webkit-mask-size: 127.828746% 123.790721%;
+  mask-size: 127.828746% 123.790721%;
+  -webkit-mask-position: 61.172161% 66.804979%;
+  mask-position: 61.172161% 66.804979%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.wordmark-mark {
+  width: var(--mark-size);
+  height: calc(var(--mark-size) * 1013 / 981);
+}
+
+.wordmark-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--paper, #f2f0eb);
+}
+
+.wordmark-name {
+  font-family: "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--name-size);
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: .9;
+}
+
+.wordmark-name--integrated {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .06em;
+  letter-spacing: 0;
+}
+
+.wordmark-name-tail { letter-spacing: .06em; }
+
+.wordmark-initial {
+  width: .707em;
+  height: .73em;
+}
+
+@supports (height: 1cap) {
+  .wordmark-initial {
+    width: .968411cap;
+    height: 1cap;
+  }
+}
+
+.wordmark-studios {
+  padding-left: .48em;
+  font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: var(--studios-size);
+  font-weight: 700;
+  letter-spacing: .48em;
+  line-height: 1;
+}
+
+.wordmark--stacked {
+  --mark-size: 136px;
+  --name-size: 40px;
+  --studios-size: 11px;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wordmark--stacked .wordmark-copy { gap: 11px; }
+
+.wordmark--symbol { --mark-size: 136px; }
