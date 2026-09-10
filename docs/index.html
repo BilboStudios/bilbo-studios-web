@@ -274,51 +274,6 @@
       text-transform: uppercase;
     }
 
-    .in-development {
-      position: relative;
-      min-height: min(76vw, 760px);
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: #122630;
-    }
-    .in-development::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(6, 14, 18, .94) 0%, rgba(6, 14, 18, .18) 68%);
-    }
-    .in-development img {
-      position: absolute;
-      inset: 0;
-      height: 100%;
-      object-fit: cover;
-    }
-    .development-copy {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr minmax(290px, .65fr);
-      align-items: end;
-      gap: 40px;
-      padding-bottom: clamp(46px, 7vw, 88px);
-    }
-    .development-copy h2 {
-      margin: 17px 0 0;
-      font-size: clamp(4rem, 10vw, 9.5rem);
-      font-weight: 740;
-      letter-spacing: -.075em;
-      line-height: .82;
-    }
-    .development-copy p:not(.eyebrow) {
-      max-width: 430px;
-      margin: 0;
-      color: rgba(255, 255, 255, .76);
-      font-size: clamp(1rem, 1.35vw, 1.2rem);
-      line-height: 1.55;
-    }
-
     .site-footer {
       padding-top: clamp(82px, 11vw, 150px);
       padding-bottom: 38px;
@@ -374,8 +329,6 @@
       .hero-index { display: none; }
       .project { grid-template-columns: 1fr; }
       .project-copy { padding-bottom: 0; }
-      .development-copy { grid-template-columns: 1fr; }
-      .in-development { min-height: 680px; }
       .footer-bottom { align-items: flex-start; flex-direction: column; }
     }
 
@@ -387,9 +340,6 @@
       .project { padding-block: 40px 54px; }
       .project-media { margin-inline: -20px; width: calc(100% + 40px); }
       .project-copy h3 { font-size: 2.5rem; }
-      .in-development { min-height: 600px; }
-      .in-development img { object-position: 54% center; }
-      .development-copy h2 { font-size: clamp(4rem, 21vw, 6.5rem); }
       .footer-title { font-size: clamp(3.2rem, 16vw, 5rem); }
       .footer-meta { flex-direction: column; gap: 8px; }
     }
@@ -410,7 +360,6 @@
     </a>
     <nav class="site-nav" aria-label="Main navigation">
       <a href="#games">Games</a>
-      <a href="#next">In development</a>
       <a href="mailto:info@bilbostudios.com">Contact</a>
     </nav>
   </header>
@@ -430,7 +379,7 @@
           <a class="hero-link" href="#games">See our games <span class="arrow" aria-hidden="true">↘</span></a>
         </div>
       </div>
-      <span class="hero-index" aria-hidden="true">Bilbao · Spain / Est. 2024</span>
+      <span class="hero-index" aria-hidden="true">Bilbao · Spain / Est. 2026</span>
     </section>
 
     <section class="work shell" id="games">
@@ -439,7 +388,7 @@
           <p class="eyebrow">Selected work</p>
           <h2>Games you can<br>play right now.</h2>
         </div>
-        <p class="section-count">02 released</p>
+        <p class="section-count">03 released</p>
       </header>
 
       <div class="project-list">
@@ -474,17 +423,22 @@
             <a class="text-link" href="https://www.crazygames.com/game/pocket-goal-world-cup-trj" target="_blank" rel="noopener">Play on CrazyGames <span class="arrow" aria-hidden="true">↗</span></a>
           </div>
         </article>
-      </div>
-    </section>
 
-    <section class="in-development" id="next">
-      <img src="games/pirates-io-cover.png" alt="Pirates.io cover art with a pirate ship sailing across bright blue water" loading="lazy">
-      <div class="development-copy shell">
-        <div>
-          <p class="eyebrow">Now in development</p>
-          <h2>Pirates.io</h2>
-        </div>
-        <p>Multiplayer naval combat across an open ocean of islands, treasure, and rival captains.</p>
+        <article class="project">
+          <div class="project-media">
+            <span class="project-number" aria-hidden="true">03</span>
+            <img src="games/pirates-io-cover.png" alt="Pirates.io cover art with a pirate ship sailing across bright blue water" loading="lazy">
+            <video autoplay muted loop playsinline poster="games/pirates-io-cover.png" aria-hidden="true" tabindex="-1" loading="lazy">
+              <source src="games/pirates-io.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="project-copy">
+            <p class="eyebrow">Multiplayer · Naval combat</p>
+            <h3>Pirates.io</h3>
+            <p>Multiplayer naval combat across an open ocean of islands, treasure, and rival captains.</p>
+            <a class="text-link" href="https://www.crazygames.com/es/game/pirates-io" target="_blank" rel="noopener">Play on CrazyGames <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
