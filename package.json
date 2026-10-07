@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
+    "build:pages": "node scripts/build-pages.mjs",
     "dev": "python3 -m http.server 4173 --bind 127.0.0.1 --directory docs"
   },
   "dependencies": { "shaders": "4.0.0" },

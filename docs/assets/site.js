@@ -16,7 +16,7 @@ function animationAllowed() {
 
 function syncMotion() {
   const enabled = animationAllowed();
-  toggle.textContent = motion.matches ? 'Motion reduced' : manuallyPaused ? 'Play motion' : 'Pause motion';
+  toggle.textContent = motion.matches ? toggle.dataset.reduced : manuallyPaused ? toggle.dataset.resume : toggle.dataset.pause;
   toggle.disabled = motion.matches;
   toggle.setAttribute('aria-pressed', String(manuallyPaused || motion.matches));
   if (shader) {

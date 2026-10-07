@@ -1,5 +1,6 @@
 import { build } from 'esbuild';
 import { readFile, writeFile } from 'node:fs/promises';
+import './build-pages.mjs';
 
 await build({
   entryPoints: ['src/hero-shader.js'],
