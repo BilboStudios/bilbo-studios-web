@@ -18,7 +18,7 @@ for (const lang of ['en', 'es']) {
       {
         '@type': 'Organization', '@id': `${origin}/#organization`,
         name: 'Bilbo Studios', alternateName: 'BilboStudios', url: `${origin}/`,
-        logo: `${origin}/assets/bilbo-pixel-b.png`, email: 'info@bilbostudios.com',
+        logo: `${origin}/icon-512.png`, email: 'info@bilbostudios.com',
       },
       {
         '@type': 'WebSite', '@id': `${origin}/#website`, url: `${origin}/`,
@@ -44,17 +44,19 @@ for (const lang of ['en', 'es']) {
   <meta property="og:url" content="${url}">
   <meta property="og:locale" content="${lang === 'es' ? 'es_ES' : 'en_GB'}">
   <meta property="og:locale:alternate" content="${lang === 'es' ? 'en_GB' : 'es_ES'}">
-  <meta property="og:image" content="${origin}/games/stellar-swarm-cover.jpg">
-  <meta property="og:image:alt" content="${escape(copy.stellarAlt)}">
+  <meta property="og:image" content="${origin}/assets/social/bilbo-studios-social.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${escape(copy.socialAlt)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escape(copy.title)}">
   <meta name="twitter:description" content="${escape(copy.description)}">
-  <meta name="twitter:image" content="${origin}/games/stellar-swarm-cover.jpg">
-  <meta name="twitter:image:alt" content="${escape(copy.stellarAlt)}">
+  <meta name="twitter:image" content="${origin}/assets/social/bilbo-studios-social.png">
+  <meta name="twitter:image:alt" content="${escape(copy.socialAlt)}">
   <script type="application/ld+json">${JSON.stringify(graph).replace(/</g, '\\u003c')}</script>`;
   const variables = {
     ...Object.fromEntries(Object.entries(copy).map(([key, value]) => [key, escape(value)])),
-    seo, assetPrefix: lang === 'es' ? '../' : '',
+    seo, homePath: lang === 'es' ? './' : './', assetPrefix: lang === 'es' ? '../' : '',
     englishPath: lang === 'es' ? '../' : './',
     spanishPath: lang === 'es' ? './' : 'es/',
     englishCurrent: lang === 'en' ? ' aria-current="page"' : '',

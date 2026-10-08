@@ -26,20 +26,19 @@ After publishing, submit `https://bilbostudios.com/sitemap.xml` in the property'
 Google Search Console and inspect `/` and `/es/`. Submission requires access to
 the verified property; these files alone do not confirm Google indexing.
 
-## Hero effect
+## Universo
 
-The hero keeps the Stellar Swarm background video, with a subtle coral light
-overlay using the MIT-licensed `shaders` package, pinned to 4.0.0.
-Edit `src/hero-shader.js`, then run `npm ci && npm run build` to regenerate
-`docs/assets/hero-shader.js` and its license notices. Commit the generated assets
-along with the source: publishing remains a static upload of `docs/`.
+The homepage uses the selected Claude Universe concept: a full-screen video
+stage, four-game picker, prominent pixel-B wordmark and compact contact footer.
+The exact forest/orange palette is retained. Mobile shows the complete video
+frame. One muted video plays at a time; playback pauses out of view and honors
+reduced motion. Game selection is retained when switching EN / ES URLs.
 
-`docs/assets/site.js` loads the effect only when WebGPU is available, motion is
-allowed, and the hero is visible. The video (or its poster when paused before
-playback) remains visible if the GPU or module fails. Animation pauses offscreen, in a hidden tab, with reduced
-motion, or through the Pause motion button. Game videos share these controls.
-Telemetry is disabled. All runtime assets are served from this site.
+Edit `src/home.html`, `docs/assets/home.css`, `docs/assets/site.js` and
+`src/locales/`, then run `npm run build`. Homepages include localized SEO,
+canonical and hreflang URLs, structured data, and the new brand social preview.
 
-The Uninstall Humanity feature uses the existing v3 cover from the Killswitch
-project, converted to WebP. It links to the released game on Poki from the hero
-and the featured game card in both languages.
+Brand reference and current decisions: [design/brand/README.md](design/brand/README.md).
+The original supplied design document is preserved alongside it. Social avatars
+and vector originals are in `docs/assets/social/`; reproducible exports are in
+`scripts/export-brand.py` (Pillow). Existing concept comparisons remain available.
